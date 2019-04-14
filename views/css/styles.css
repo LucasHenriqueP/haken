@@ -1,0 +1,240 @@
+/* ==== Google font ==== */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url('font-awesome.min.css');
+
+/* ==== overwrite bootstrap standard ==== */
+@import url('overwrite.css');
+@import url('animate.min.css');
+
+
+
+body {
+  background: #99FFE2;
+  font-family:'Roboto', Arial, sans-serif;
+  color:#333;
+  line-height:1.6em;
+  overflow-x:hidden;
+  font-size: 16px;
+}
+
+
+/*************************
+*******MENU******
+**************************/
+.navbar-fixed-top .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+.navbar>.container .navbar-brand{
+  margin-left: 0;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin:0;
+}
+
+.navbar-header a.navbar-brand {
+   color:#111;
+   font-family:'Roboto';
+}
+
+.navbar-header a.navbar-brand:hover{
+   color:#fff;
+}
+
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+  background: white;
+  padding: 5px 0;
+  padding-bottom: 0;
+}
+
+.navbar-nav{
+  margin-top: 12px;
+ }
+
+.navbar-nav>li{
+  margin-left: 20px;
+  padding-bottom: 28px;
+}
+
+.navbar-fixed-top .navbar-nav > li > a {
+	padding: 5px 8px;
+	margin: 0;
+	border-radius: 3px;
+	color: #111;
+	line-height: 24px;
+	display: inline-block;
+	font-weight:500;
+	font-size:18px;
+	font-family:'Roboto';
+}
+
+.navbar-fixed-top .navbar-nav > li > a:hover{
+	background: #0BA9F9;	
+	color:#fff;
+}
+
+.navbar-fixed-top {
+  border: none;
+  background: #0BA9F9;
+}
+
+.navbar-fixed-top .navbar-brand {
+  font-size: 36px;
+  line-height: 50px;
+  color: #fff;
+}
+
+#header{
+  position: sticky;
+  top: 0;
+  z-index: 99999999;
+}
+/*************************
+*******Slider******
+**************************/
+.slider {
+  position: relative;
+}
+
+#carousel-slider {
+  position: relative;
+}
+
+#carousel-slider .carousel-indicators {
+  bottom: -25px;
+}
+
+#carousel-slider .carousel-indicators li {
+  border: 1px solid #ffbd20;
+}
+
+#carousel-slider a i {
+  border: 1px solid #0BA9F9;
+  border-radius:50%;
+  font-size: 30px;
+  height: 50px;
+  padding: 8px;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  color:#0BA9F9;
+}
+
+#carousel-slider a i:hover {
+  background:#0BA9F9;
+  color:#fff;
+  border: 1px solid #0BA9F9;
+}
+
+#carousel-slider 
+.carousel-control {
+  width:inherit;
+}
+
+#carousel-slider .carousel-control.left i {
+  left:50px;
+  top:265px;
+}
+
+#carousel-slider .carousel-control.right i {
+  right: 50px;
+  top:265px;
+}
+
+#carousel-slider
+.carousel-control.left, 
+#carousel-slider
+.carousel-control.right {
+  background: none;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 150px;
+  font-size:40px;
+  left: 15%;
+  z-index: 10;
+  padding-bottom: 0px;
+  color: #fff;
+  text-align: center;
+}
+
+.carousel-caption  h2 {
+	font-size:60px;
+	color: #0BA9F9;
+}
+
+.carousel-caption  h2 span {
+	font-size:60px;
+	color: #fff;
+}
+
+.carousel-caption  p {
+  font-size:30px;
+  margin-top:30px;
+  color:#fff;
+}
+
+.carousel-inner .form-inline .form-group button[type="livedemo"]{
+	padding:20px 60px;
+	font-size:25px;
+	background:#0BA9F9;
+	color:#fff;
+}
+
+.carousel-inner .form-inline .form-group button[type="livedemo"]:hover {
+	color:#0BA9F9;
+	background:#fff;
+	-webkit-transition: color 300ms, background-color 300ms;
+  -moz-transition: color 300ms, background-color 300ms;
+  -o-transition:  color 300ms, background-color 300ms;
+  transition:  color 300ms, background-color 300ms;
+}
+
+.carousel-inner .form-inline .form-group button[type="getnow"]{
+	padding:20px 60px;
+	font-size:25px;
+	background:#fff;
+	color:#0BA9F9;
+}
+
+.carousel-inner .form-inline .form-group button[type="getnow"]:hover {
+	color:#fff;
+	background:#0BA9F9;
+	-webkit-transition: color 300ms, background-color 300ms;
+  -moz-transition: color 300ms, background-color 300ms;
+  -o-transition:  color 300ms, background-color 300ms;
+  transition:  color 300ms, background-color 300ms;
+}
+
+
+
+
+.carousel-control {
+    top: -34px;
+}
+
+.owl-carousel .owl-item img {
+    object-fit: cover;
+}
+
+.alinhamento{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.carousel-control-next{
+  filter: invert(50%);
+}
+
+.carousel-control-prev{
+  filter: invert(50%);
+}
