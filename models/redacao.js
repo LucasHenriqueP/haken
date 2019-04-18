@@ -34,5 +34,6 @@ const teste = new Redacao({
     autor: "Eu", //  Depois vai entrar uma referencia para a 'tabela' aluno
     tema: "um tema legal" // Depois vai entrar uma referencia para a 'tabela' tema
 })
-teste.save()
-console.log(teste);
+
+
+module.exports = Redacao; 
