@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const redacao = require('./routes/redacao');
 const login = require('./routes/login');
-let port = 3000;
+let port = 5000;
 
 const app = express();
 
