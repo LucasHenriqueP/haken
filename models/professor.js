@@ -26,6 +26,4 @@ const testeprofessor = new Professor({
     senha: 123456
 });
 
-testeprofessor.save();
-
-console.log(testeprofessor);
+module.exports = Professor

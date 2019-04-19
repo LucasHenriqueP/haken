@@ -9,104 +9,40 @@
 
 
 
-body {
-  background: #99FFE2;
-  font-family:'Roboto', Arial, sans-serif;
-  color:#333;
-  line-height:1.6em;
-  overflow-x:hidden;
-  font-size: 16px;
-}
 
-
-/*************************
-*******MENU******
-**************************/
-.navbar-fixed-top .navbar-toggle .icon-bar {
-  background-color: #fff;
-}
-
-.navbar>.container .navbar-brand{
-  margin-left: 0;
-}
-
-.navbar-brand {
-  padding: 0;
-  margin:0;
-}
-
-.navbar-header a.navbar-brand {
-   color:#111;
-   font-family:'Roboto';
-}
-
-.navbar-header a.navbar-brand:hover{
-   color:#fff;
-}
-
-.navbar {
-  border-radius: 0;
-  margin-bottom: 0;
-  background: white;
-  padding: 5px 0;
-  padding-bottom: 0;
-}
-
-.navbar-nav{
-  margin-top: 12px;
- }
-
-.navbar-nav>li{
-  margin-left: 20px;
-  padding-bottom: 28px;
-}
-
-.navbar-fixed-top .navbar-nav > li > a {
-	padding: 5px 8px;
-	margin: 0;
-	border-radius: 3px;
-	color: #111;
-	line-height: 24px;
-	display: inline-block;
-	font-weight:500;
-	font-size:18px;
-	font-family:'Roboto';
-}
-
-.navbar-fixed-top .navbar-nav > li > a:hover{
-	background: #0BA9F9;	
-	color:#fff;
-}
 
 .navbar-fixed-top {
-  border: none;
   background: #0BA9F9;
+  height: 110px;
 }
 
-.navbar-fixed-top .navbar-brand {
-  font-size: 36px;
-  line-height: 50px;
-  color: #fff;
-}
+
 
 #header{
-  position: sticky;
+  position:inherit;
   top: 0;
   z-index: 99999999;
+
 }
+
+
+
 /*************************
 *******Slider******
 **************************/
 .slider {
   position: relative;
+  margin: 60px;
+   border: medium;
 }
 
 #carousel-slider {
   position: relative;
+
 }
 
 #carousel-slider .carousel-indicators {
-  bottom: -25px;
+  bottom: -35px;
 }
 
 #carousel-slider .carousel-indicators li {
@@ -123,12 +59,13 @@ body {
   top: 50%;
   width: 50px;
   color:#0BA9F9;
+
 }
 
 #carousel-slider a i:hover {
   background:#0BA9F9;
   color:#fff;
-  border: 1px solid #0BA9F9;
+  border: 5px solid #0BA9F9;
 }
 
 #carousel-slider 
@@ -217,24 +154,21 @@ body {
 
 
 .carousel-control {
-    top: -34px;
+    top: -45px;
 }
 
 .owl-carousel .owl-item img {
     object-fit: cover;
 }
 
-.alinhamento{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
 .carousel-control-next{
   filter: invert(50%);
+  margin-top: 70px;
+
 }
 
 .carousel-control-prev{
   filter: invert(50%);
+  margin-top: 70px;
 }

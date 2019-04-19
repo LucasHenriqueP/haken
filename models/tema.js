@@ -1,11 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/haken", { useNewUrlParser: true
-});
-
-const bd = mongoose.connection
-bd.on('error',() =>console.log("erro ao conectar"));
-
 const TemaSchema = new mongoose.Schema({
     nome: {
         type: String,
@@ -26,9 +20,8 @@ const Tema = mongoose.model('tema', TemaSchema, 'temas');
 // Aqui codigo para testar se a model foi criada certa
 const teste = new Tema({
     nome: "um tema",
-    data_limite: Date.now() // Data usada apenas para teste
+    data_limite: Date.now(), // Data usada apenas para teste
+    texto_apoio: "um puta texto de apoio"
 });
 
-teste.save();
-
-console.log(teste);
+module.exports = Tema
