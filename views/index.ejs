@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">    
+ <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">     --> 
 
 
    <!--Chamando Javascript-->
@@ -46,7 +46,7 @@
     <ul class="nav navbar-nav">
       <li class="active" style="width: 170px;position: fixed; left: 50%; margin: -35px;  font-family:'Arial'; font-size: 16px;font-weight: bold "><a href="#">TEMAS</a></li>
       <li style="width: 170px;position: fixed; left: 65%; margin: -35px; font-family:'Arial'; font-size: 16px;font-weight: bold; "><a href="#">ENVIO DE REDAÇÔES</a></li>
-      <li style="width: 170px;position: fixed; left: 80%; margin: -20px; font-family:'Arial'; font-size: 16px;font-weight: bold; "><a href="#">LOGIN</a></li>
+      <li style="width: 170px;position: fixed; left: 80%; margin: -20px; font-family:'Arial'; font-size: 16px;font-weight: bold; "><a href="#" data-toggle="modal" data-target="#exampleModal">LOGIN</a></li>
     </ul>
 
  
@@ -55,9 +55,6 @@
 
 </nav>
 </header>
-
-
-
 
 
 <!--slider-->
@@ -106,6 +103,34 @@
       </div>
             </div>
         </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+            <input type="text" class="form-control" name ="nome" placeholder="Usuario">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Senha">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
 
 
  

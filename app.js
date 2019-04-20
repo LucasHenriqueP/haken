@@ -16,13 +16,18 @@ bd.on('error',() =>console.log("erro ao conectar"));
 
 
 const app = express();
+
+app.set('view engine', 'html');
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
+
 
 app.get('/', (req, res) =>{
-    res.send("Tudo funcionou");
+    res.render('index.ejs')
 });
 
 app.use('/redacao', redacao);
