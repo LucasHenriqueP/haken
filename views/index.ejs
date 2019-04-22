@@ -17,7 +17,7 @@
 
    <!--Chamando Javascript-->
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-dropdownhover.min.js"></script>
 
@@ -31,22 +31,22 @@
 <body style="background:#C3D3FF">
 
 	<!--Topo-->
-<header>	
-<nav class="navbar navbar-fixed-top hidden-xs" role="banner" style="position: sticky;top:0;">
+<header class="header-fixo">	
+<nav class="navbar navbar-fixed-top hidden-xs" role="banner" >
 
   <div class="container-fluid">
 
-    <div class="navbar-header col-sm-6">
+    <div class="navbar-header">
 
-      <a href="index.html" class="col-xs-12" style="display: flex;align-items: baseline;justify-content: flex-start;">
-      <img src="img/logo.png" class="img-responsive" style="width: 170px;position: fixed; left: 80px; margin:-45px;">
-
+      <a href="index.html" class="" style="">
+      <img src="img/logo.png" class="img-responsive" style="width: 170px; left: 80px;">
+        </a>
     </div>
 
-    <ul class="nav navbar-nav">
-      <li class="active" style="width: 170px;position: fixed; left: 50%; margin: -35px;  font-family:'Arial'; font-size: 16px;font-weight: bold "><a href="#">TEMAS</a></li>
-      <li style="width: 170px;position: fixed; left: 65%; margin: -35px; font-family:'Arial'; font-size: 16px;font-weight: bold; "><a href="#">ENVIO DE REDAÇÔES</a></li>
-      <li style="width: 170px;position: fixed; left: 80%; margin: -20px; font-family:'Arial'; font-size: 16px;font-weight: bold; "><a href="#" data-toggle="modal" data-target="#exampleModal">LOGIN</a></li>
+    <ul class="nav">
+      <li class="active nav-item mr-2" ><a href="#" class="nav-link" style="color: black;">TEMAS</a></li>
+      <li class="nav-item mr-2" ><a href="#" class="nav-link" style="color: black;">ENVIO DE REDAÇÔES</a></li>
+      <li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" class="nav-link" style="color: black;">LOGIN</a></li>
     </ul>
 
  
@@ -138,11 +138,53 @@
       COLUNA LATERAL ESQUERDA
     </div>
     <div class="col-6">
-      CONTEUDO PRINCIPAL
+      <div class="card mb-2">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <a href="#" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <a href="#" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <a href="#" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <a href="#" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
     </div>
 
-    <div class="col-3">
-      COLUNA LATERAL DIREITA
+    <div class="col-3 border border-warning">
+      <h3 class="text-center card-header"> Temas </h3>
+      <div class="alert alert-success" role="alert">
+       <a href="#" class="alert-link">Aqui um tema em aberto</a>
+      </div>
+      <div class="alert alert-success" role="alert">
+        <a href="#" class="alert-link">Aqui um tema em aberto</a>
+       </div>
+       <div class="alert alert-light" role="alert">
+        <a href="#" class="alert-link">Aqui um tema já fechado</a>
+       </div>
+       <div class="alert alert-light" role="alert">
+        <a href="#" class="alert-link">Aqui um tema já fechado</a>
+       </div>
     </div>
   </div>
 </div>

@@ -13,17 +13,20 @@
 
 .navbar-fixed-top {
   background: #0BA9F9;
-  height: 110px;
-}
-
-
-
-#header{
-  position:inherit;
+  position: fixed;
+  width: 100vw;
+  z-index: 8888888888888888888;
   top: 0;
-  z-index: 99999999;
-
+  opacity: 0.8;
 }
+
+.nav-item:hover{
+  background-color: #fff;
+}
+
+
+
+
 
 
 
