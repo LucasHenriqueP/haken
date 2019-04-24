@@ -15,9 +15,13 @@
   background: #0BA9F9;
   position: fixed;
   width: 100vw;
-  z-index: 8888888888888888888;
+  z-index: 1049;
   top: 0;
   opacity: 0.8;
+}
+
+.nav-item{
+  transition: 0.4s ease-in;
 }
 
 .nav-item:hover{

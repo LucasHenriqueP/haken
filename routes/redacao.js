@@ -3,9 +3,14 @@ const redacao = require('../models/redacao');
 const verifyToken = require('../middleware/auth');
 
 
-router.get('/', verifyToken ,(req, res) =>{
+router.get('/',(req, res) =>{
     redacao.find({}, (err, redacoes)=>{
         if(redacoes != null){
+            for(i in redacoes){
+                
+                redacoes[i]['autor'] = ''
+                console.log(redacoes[i]['autor']);
+            }
             res.json(redacoes);
         }
         
