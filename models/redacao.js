@@ -12,7 +12,7 @@ const RedacaoSchema = new mongoose.Schema({
         type: String
     },
     autor:{
-        type: String//mongoose.Schema.Types.ObjectId Aqui vai entrar uma referencia para o id do autor
+        type: mongoose.Schema.Types.ObjectId //Aqui vai entrar uma referencia para o id do autor
     },
     data: {
         type: Date

@@ -11,7 +11,6 @@ const alunoSchema = new mongoose.Schema({
     nome:{
         type: String,
         required: true,
-        index: { unique: true }
     },
     email:{
         type: String, // ideal seria usar algo pra validar se mesmo um email
@@ -19,13 +18,6 @@ const alunoSchema = new mongoose.Schema({
     }
 });
 
-const Aluno = mongoose.model("alunos", alunoSchema, "aluno");
+const Aluno = mongoose.model("alunos", alunoSchema, "alunos");
 
-teste = new Aluno({
-    nome: "Testerson",
-    email: "teste@testando.com"
-});
-
-teste.save().catch(err => console.log(err));
-
-console.log(teste);
+module.exports = Aluno;
