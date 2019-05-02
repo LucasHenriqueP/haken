@@ -6,7 +6,9 @@ const redacao = require('./routes/redacao');
 const login = require('./routes/login');
 const tema = require('./routes/tema');
 
-const temaModel = require('./models/tema')
+const temaModel = require('./models/tema');
+const redacaoCorrigidaModel = require('./models/redacao_corrigida');
+const redacaoModel = require('./models/redacao');
 
 
 let port = 3000;
@@ -30,19 +32,17 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) =>{
     temaModel.find({}, (er, temas) =>{
-        temas.sort((a, b)=>{
-            if (a.data_limite > b.data_limite) {
-                return 1;
-              }
-              if (a.data_limite < b.data_limite) {
-                return -1;
-              }
-              // a must be equal to b
-              return 0;
-        })
-        console.log(temas);
+       redacaoModel.find({}, (er, redacoes) =>{
+           redacaoCorrigidaModel.find({}, (er, redacoes_corrigidas)=>{
+            console.log(redacoes);
+                console.log(temas);
+                console.log(redacoes_corrigidas);
+                res.render('index.ejs', {temas, redacoes, redacoes_corrigidas})
+            })
+       })
         
-        res.render('index.ejs', {temas})
+
+        
     })
     numeros = 5
 });

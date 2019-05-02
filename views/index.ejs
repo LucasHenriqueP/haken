@@ -131,18 +131,18 @@
   </div>
 </div>
 
-
-<div class="modal fade" id="redacaoModal" tabindex="-1" role="dialog" aria-labelledby="redacaoModalLabel" aria-hidden="true">
+<% for (i in redacoes){%>
+<div class="modal fade" id="<%= redacoes[i]._id %>" tabindex="-1" role="dialog" aria-labelledby="<%= redacoes[i]._id %>Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="redacaoModalLabel">Titulo Da redacao</h5>
+        <h5 class="modal-title" id="<%= redacoes[i]._id %>Label"><%= redacoes[i].titulo%></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3 class="text-center">Tema</h3>
+        <h3 class="text-center"><%= redacoes[i].tema %></h3>
         <a href=""> <p> <i class="far fa-file">&nbsp;</i> Redação Original </p></a>
          <a href=""> <p> <i class="fas fa-check">&nbsp;</i>Redação Corrigida </p></a>
       </div>
@@ -151,6 +151,7 @@
     </div>
   </div>
 </div>
+<%}%>
 
 <div class="modal fade" id="envioredacao" tabindex="-1" role="dialog" aria-labelledby="envioModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -228,37 +229,15 @@
 <div class="container">
   <div class="row">
     <div class="col-9">
+        <% for(j in redacoes) {%>
       <div class="card mb-2">
-        <h5 class="card-header text-center">Tema da Redação</h5>
+        <h5 class="card-header text-center"><%= redacoes[j].tema%></h5>
         <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <a href="#" data-toggle="modal" data-target="#redacaoModal" class="btn btn-primary">Ver Redação</a>
+          <h5 class="card-title"><%= redacoes[j].titulo%>></h5>
+          <a href="#" data-toggle="modal" data-target="#<%= redacoes[j]._id %>" class="btn btn-primary">Ver Redação</a>
         </div>
       </div>
-
-      <div class="card mb-3">
-        <h5 class="card-header text-center">Tema da Redação</h5>
-        <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <a href="#" class="btn btn-primary">Ver Redação</a>
-        </div>
-      </div>
-
-      <div class="card mb-3">
-        <h5 class="card-header text-center">Tema da Redação</h5>
-        <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <a href="#" class="btn btn-primary">Ver Redação</a>
-        </div>
-      </div>
-
-      <div class="card mb-3">
-        <h5 class="card-header text-center">Tema da Redação</h5>
-        <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <a href="#" class="btn btn-primary">Ver Redação</a>
-        </div>
-      </div>
+      <%}%>
     </div>
 
     <div class="col-3 border border-warning">

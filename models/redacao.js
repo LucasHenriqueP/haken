@@ -21,5 +21,11 @@ const RedacaoSchema = new mongoose.Schema({
 
 const Redacao = mongoose.model('redacao', RedacaoSchema, 'redacoes');
 
+let redacao1 = new Redacao({
+    tema: "asdasd",
+    arquivo: "redacao1.txt",
+    titulo: "adasd"
+})
+redacao1.save();
 
 module.exports = Redacao; 

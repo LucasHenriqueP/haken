@@ -12,11 +12,15 @@ const Redacao_Corrigida_Schema = new mongoose.Schema({
         required: true
     },
     tema:{
-        type: String
+        type: String // id
     },
     arquivo:{
         type: String
     },
+    redacao_original:{
+        type: String, //mongoose.Schema.Types.ObjectId,
+        //required: true
+    }
 });
 
 const Redacao_corrigida = mongoose.model('redacao_corrigida', Redacao_Corrigida_Schema, 'redacao_corrigida') 
@@ -28,6 +32,9 @@ const testered_corrigida = new Redacao_corrigida({
     arquivo: "redacao.pdf"
 
 })
+
 //Não coloquei o autor porque acho que não é preciso na redação corrigida
-testered_corrigida.save()
+//testered_corrigida.save()
 console.log(testered_corrigida);
+
+module.exports = Redacao_corrigida
