@@ -19,9 +19,11 @@ const Tema = mongoose.model('tema', TemaSchema, 'temas');
 
 // Aqui codigo para testar se a model foi criada certa
 const teste = new Tema({
-    nome: "um tema",
+    nome: "Tema do dia 02",
     data_limite: Date.now(), // Data usada apenas para teste
-    texto_apoio: "um puta texto de apoio"
+    texto_apoio: "ASADSIOASOPDOÍFDSKADSMKDPCOFASPOSAPOD"
 });
+
+//teste.save()
 
 module.exports = Tema

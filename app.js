@@ -5,6 +5,10 @@ const mongoose = require('mongoose');
 const redacao = require('./routes/redacao');
 const login = require('./routes/login');
 const tema = require('./routes/tema');
+
+const temaModel = require('./models/tema')
+
+
 let port = 3000;
 
 mongoose.connect("mongodb://127.0.0.1/haken", { useNewUrlParser: true
@@ -25,8 +29,22 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', (req, res) =>{
+    temaModel.find({}, (er, temas) =>{
+        temas.sort((a, b)=>{
+            if (a.data_limite > b.data_limite) {
+                return 1;
+              }
+              if (a.data_limite < b.data_limite) {
+                return -1;
+              }
+              // a must be equal to b
+              return 0;
+        })
+        console.log(temas);
+        
+        res.render('index.ejs', {temas})
+    })
     numeros = 5
-    res.render('index.ejs', {numeros})
 });
 app.get('/professor', (req, res) =>{
     numeros = 5

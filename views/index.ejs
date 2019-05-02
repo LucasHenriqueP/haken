@@ -174,7 +174,10 @@
           <div class="form-group">
           <h6>Tema: </h6>
           <select id="idTema">
-            <option>Selecione o tema da Redação:</option>
+            <option active>Selecione o tema da Redação:</option>
+            <% for (i in temas){%>
+            <option value= "<%= temas[i]._id %>"> <%=  temas[i].nome  %> </option>
+            <%}%>
           </select>
           </div>
            <div class="form-group">
@@ -210,7 +213,7 @@
         <h6>Data Limite de envio:</h6>
 
 
-           <button type="submit" class="btn btn-primary" ><a href="#" data-toggle="modal" data-target="#envioredacao" style="color: black;"> Enviar Redação </a></button>
+           <button type="submit" class="btn btn-primary" ><a href="#"  data-dismiss="modal" aria-label="Close"  data-toggle="modal" data-target="#envioredacao" style="color: black;"> Enviar Redação </a></button>
       </div>
       <div class="modal-footer">
       </div>
@@ -271,6 +274,7 @@
        </div>
        <div class="alert alert-light" role="alert">
         <a href="#" class="alert-link">Aqui um tema já fechado</a>
+        
        </div>
     </div>
   </div>

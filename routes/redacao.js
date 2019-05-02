@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const redacao = require('../models/redacao');
 const aluno = require('../models/aluno');
+const path = require('path');
+
 
 
 const multer = require('multer');
@@ -28,6 +30,35 @@ router.get('/',(req, res) =>{
         }
         
     });
+});
+
+
+router.get('/:nome', (req, res)=>{
+    nome = req.params.nome;
+    redacao.find({arquivo: nome}, (err, red)=>{
+        console.log(err);
+        
+        if(err){
+            console.log("nao acho8u");
+            
+            res.status(404).send("Redacao não encontrada")
+        }
+        //console.log(red);
+        //console.log(path.join(__dirname+ "/../redacoes", red[0].arquivo));
+        
+        
+
+        
+        res.download(path.join(__dirname+ "/../redacoes", red[0].arquivo), erro =>{
+            if(erro){
+                console.log(erro);
+                
+            }
+        });
+        //res.json(red)
+        console.log("acho8u");
+    })
+    console.log(nome);
 })
 
 router.post('/', upload.single('redacao'), (req, res) =>{
