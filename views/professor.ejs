@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<title> Projeto redação </title>
+   
+    <!--Chamando CSS-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+ <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">     --> 
+
+
+   <!--Chamando Javascript-->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-dropdownhover.min.js"></script>
+
+
+
+
+</head>
+
+
+<body style="background:#B3CFE8">
+
+	<!--Topo-->
+<header class="header-fixo">	
+<nav class="navbar navbar-fixed-top hidden-xs" role="banner" >
+
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+
+      <a href="index.html" class="" style="">
+      <img src="img/logo.png" class="img-responsive" style="width: 170px; left: 80px;">
+        </a>
+    </div>
+
+    <ul class="nav">
+
+      <li class="nav-item"><a href="#" data-toggle="modal" data-target="#criacaotema" class="nav-link" style="color: black;">CRIAÇÃO DE TEMAS</a></li>
+      <li class="nav-item"><a href="#" class="nav-link" style="color: black;">SAIR</a></li>
+    </ul>
+
+ 
+ 
+  </div>
+
+</nav>
+</header>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="criacaotema" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Criação de temas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+          	<h6>Tema: </h6>
+            <input type="text" class="form-control" name ="nome" placeholder="Tema">
+          </div>
+          <div class="form-group">
+          	<h6>Texto de apoio: </h6>
+          	<textarea rows="5" cols="62" class="form-control">Digite o texto de apoio</textarea>
+          </div>
+          <div class="form-group">
+          	<h6>Data Limite: </h6>
+            <input  type="date" class="form-control" placeholder="dd/mm/yyyy">
+          </div>
+          <button type="submit" class="btn btn-primary" > Criar </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="redacaoModal" tabindex="-1" role="dialog" aria-labelledby="redacaoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="redacaoModalLabel">Titulo Da redacao</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-center">Tema</h3>
+        <h6>Nome:</h6>
+        <h6>Email:</h6>
+        <a href=""> <p> <i class="far fa-file">&nbsp;</i> Redação  </p></a>
+         <a href="#" class="btn btn-primary">Enviar Correção de  Redação</a>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container" style="margin: 150px">
+  <div class="row">
+    <div class="col-9">
+      <div class="card mb-2">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <h6 class="text-center">Nome do aluno: </h6>
+         <a href="#" data-toggle="modal" data-target="#redacaoModal" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <h6 class="text-center">Nome do aluno: </h6>
+          <a href="#" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <h6 class="text-center">Nome do aluno: </h6>
+          <a href="#" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <h5 class="card-header text-center">Tema da Redação</h5>
+        <div class="card-body text-center">
+          <h5 class="card-title">Titulo da Redação</h5>
+          <h6 class="text-center">Nome do aluno: </h6>	
+          <a href="#" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 border border-warning">
+      <h3 class="text-center card-header"> Temas </h3>
+      <div class="alert alert-success" role="alert">
+       <a href="#" class="alert-link">Aqui um tema em aberto</a>
+      </div>
+      <div class="alert alert-success" role="alert">
+        <a href="#" class="alert-link">Aqui um tema em aberto</a>
+       </div>
+       <div class="alert alert-light" role="alert">
+        <a href="#" class="alert-link">Aqui um tema já fechado</a>
+       </div>
+       <div class="alert alert-light" role="alert">
+        <a href="#" class="alert-link">Aqui um tema já fechado</a>
+       </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
