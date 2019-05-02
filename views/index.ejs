@@ -27,7 +27,7 @@
 </head>
 
 
-<body style="background:#C3D3FF">
+<body style="background:#B3CFE8">
 
 	<!--Topo-->
 <header class="header-fixo">	
@@ -43,8 +43,8 @@
     </div>
 
     <ul class="nav">
-      <li class="active nav-item mr-2" ><a href="#" class="nav-link" style="color: black;">TEMAS</a></li>
-      <li class="nav-item mr-2" ><a href="#" class="nav-link" style="color: black;">ENVIO DE REDAÇÔES</a></li>
+
+      <li class="nav-item mr-2" ><a href="#" data-toggle="modal" data-target="#envioredacao" class="nav-link" style="color: black;">ENVIO DE REDAÇÔES</a></li>
       <li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" class="nav-link" style="color: black;">LOGIN</a></li>
     </ul>
 
@@ -152,14 +152,79 @@
   </div>
 </div>
 
+<div class="modal fade" id="envioredacao" tabindex="-1" role="dialog" aria-labelledby="envioModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Envio de redação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+            <h6>Nome:</h6>
+            <input type="text" class="form-control" name ="nome" placeholder="Nome">
+          </div>
+          <div class="form-group">
+            <h6>Email:</h6>
+            <input type="text" class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+          <h6>Tema: </h6>
+          <select id="idTema">
+            <option>Selecione o tema da Redação:</option>
+          </select>
+          </div>
+           <div class="form-group">
+            <h6>Titulo da Redação:</h6>
+            <input type="text" class="form-control" placeholder="Titulo">
+          </div>
+         <div class="form-group">
+          <h6>Selecionar Redação: </h6>
+        <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+        <input type="file" />  
+          </div>
+          <button type="submit" class="btn btn-primary"> Enviar </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tema" tabindex="-1" role="dialog" aria-labelledby="temaModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="redacaoModalLabel">Tema</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-center">Texto de apoio:</h3>
+
+        <h6>Data Limite de envio:</h6>
+
+
+           <button type="submit" class="btn btn-primary" ><a href="#" data-toggle="modal" data-target="#envioredacao" style="color: black;"> Enviar Redação </a></button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 <div class="container">
   <div class="row">
-    <div class="col-3">
-      COLUNA LATERAL ESQUERDA
-    </div>
-    <div class="col-6">
+    <div class="col-9">
       <div class="card mb-2">
         <h5 class="card-header text-center">Tema da Redação</h5>
         <div class="card-body text-center">
@@ -168,7 +233,7 @@
         </div>
       </div>
 
-      <div class="card mb-2">
+      <div class="card mb-3">
         <h5 class="card-header text-center">Tema da Redação</h5>
         <div class="card-body text-center">
           <h5 class="card-title">Titulo da Redação</h5>
@@ -176,7 +241,7 @@
         </div>
       </div>
 
-      <div class="card mb-2">
+      <div class="card mb-3">
         <h5 class="card-header text-center">Tema da Redação</h5>
         <div class="card-body text-center">
           <h5 class="card-title">Titulo da Redação</h5>
@@ -184,7 +249,7 @@
         </div>
       </div>
 
-      <div class="card mb-2">
+      <div class="card mb-3">
         <h5 class="card-header text-center">Tema da Redação</h5>
         <div class="card-body text-center">
           <h5 class="card-title">Titulo da Redação</h5>
@@ -196,7 +261,7 @@
     <div class="col-3 border border-warning">
       <h3 class="text-center card-header"> Temas </h3>
       <div class="alert alert-success" role="alert">
-       <a href="#" class="alert-link">Aqui um tema em aberto</a>
+       <a href="#" class="alert-link" data-toggle="modal" data-target="#tema">Aqui um tema em aberto</a>
       </div>
       <div class="alert alert-success" role="alert">
         <a href="#" class="alert-link">Aqui um tema em aberto</a>
