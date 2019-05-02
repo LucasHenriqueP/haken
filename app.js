@@ -28,6 +28,11 @@ app.get('/', (req, res) =>{
     numeros = 5
     res.render('index.ejs', {numeros})
 });
+app.get('/professor', (req, res) =>{
+    numeros = 5
+    res.render('professor.ejs', {numeros})
+});
+
 
 app.use('/redacao', redacao);
 app.use('/login', login);
