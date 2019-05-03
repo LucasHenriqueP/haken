@@ -45,7 +45,7 @@
     <ul class="nav">
 
       <li class="nav-item mr-2" ><a href="#" data-toggle="modal" data-target="#envioredacao" class="nav-link" style="color: black;">ENVIO DE REDAÇÔES</a></li>
-      <li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" class="nav-link" style="color: black;">LOGIN</a></li>
+      <li class="nav-item"><a href="#exampleModal" data-toggle="modal" data-target="#" class="nav-link" style="color: black;">LOGIN</a></li>
     </ul>
 
  
@@ -131,27 +131,7 @@
   </div>
 </div>
 
-<% for (i in redacoes){%>
-<div class="modal fade" id="<%= redacoes[i]._id %>" tabindex="-1" role="dialog" aria-labelledby="<%= redacoes[i]._id %>Label" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="<%= redacoes[i]._id %>Label"><%= redacoes[i].titulo%></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h3 class="text-center"><%= redacoes[i].tema %></h3>
-        <a href=""> <p> <i class="far fa-file">&nbsp;</i> Redação Original </p></a>
-         <a href=""> <p> <i class="fas fa-check">&nbsp;</i>Redação Corrigida </p></a>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-<%}%>
+
 
 <div class="modal fade" id="envioredacao" tabindex="-1" role="dialog" aria-labelledby="envioModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -163,18 +143,18 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form action="http://localhost:3000/redacao" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <h6>Nome:</h6>
             <input type="text" class="form-control" name ="nome" placeholder="Nome">
           </div>
           <div class="form-group">
             <h6>Email:</h6>
-            <input type="text" class="form-control" placeholder="Email">
+            <input type="text" class="form-control" name="email" placeholder="Email">
           </div>
           <div class="form-group">
           <h6>Tema: </h6>
-          <select id="idTema">
+          <select name="tema" id="idTema">
             <option active>Selecione o tema da Redação:</option>
             <% for (i in temas){%>
             <option value= "<%= temas[i]._id %>"> <%=  temas[i].nome  %> </option>
@@ -183,12 +163,12 @@
           </div>
            <div class="form-group">
             <h6>Titulo da Redação:</h6>
-            <input type="text" class="form-control" placeholder="Titulo">
+            <input type="text" class="form-control" name="titulo" placeholder="Titulo">
           </div>
          <div class="form-group">
           <h6>Selecionar Redação: </h6>
         <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
-        <input type="file" />  
+        <input type="file" name="redacao"/>  
           </div>
           <button type="submit" class="btn btn-primary"> Enviar </button>
         </form>
@@ -222,6 +202,28 @@
   </div>
 </div>
 
+<% for (i in redacoes){%>
+<div class="modal fade" id="<%= redacoes[i]._id %>" tabindex="-1" role="dialog" aria-labelledby="<%= redacoes[i]._id %>Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%= redacoes[i]._id %>Label"><%= redacoes[i].titulo%></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-center"><%= redacoes[i].tema %></h3>
+        <a href=""> <p> <i class="far fa-file">&nbsp;</i> Redação Original </p></a>
+         <a href=""> <p> <i class="fas fa-check">&nbsp;</i>Redação Corrigida </p></a>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<%}%>
+
 
 
 
@@ -233,8 +235,8 @@
       <div class="card mb-2">
         <h5 class="card-header text-center"><%= redacoes[j].tema%></h5>
         <div class="card-body text-center">
-          <h5 class="card-title"><%= redacoes[j].titulo%>></h5>
-          <a href="#" data-toggle="modal" data-target="#<%= redacoes[j]._id %>" class="btn btn-primary">Ver Redação</a>
+          <h5 class="card-title"><%= redacoes[j].titulo%></h5>
+          <a href="#<%= redacoes[j]._id %>" data-toggle="modal" data-target="#" class="btn btn-primary">Ver Redação</a>
         </div>
       </div>
       <%}%>
@@ -258,6 +260,7 @@
     </div>
   </div>
 </div>
+
 
 </body>
 </html>
