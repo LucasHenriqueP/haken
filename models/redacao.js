@@ -6,7 +6,7 @@ const RedacaoSchema = new mongoose.Schema({
         required: true
     },
     tema:{
-        type: String//mongoose.Schema.Types.ObjectId Aqui vai entrar uma referencia para o id do tema
+        type: mongoose.Schema.Types.ObjectId //Aqui vai entrar uma referencia para o id do tema
     },
     arquivo:{
         type: String
@@ -26,6 +26,6 @@ let redacao1 = new Redacao({
     arquivo: "redacao1.txt",
     titulo: "adasd"
 })
-redacao1.save();
+//redacao1.save();
 
 module.exports = Redacao; 

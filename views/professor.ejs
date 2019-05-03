@@ -37,7 +37,7 @@
 
     <div class="navbar-header">
 
-      <a href="index.html" class="" style="">
+      <a href="/" class="" style="">
       <img src="img/logo.png" class="img-responsive" style="width: 170px; left: 80px;">
         </a>
     </div>
@@ -70,18 +70,18 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form action="http://localhost:3000/tema" method="POST">
           <div class="form-group">
           	<h6>Tema: </h6>
             <input type="text" class="form-control" name ="nome" placeholder="Tema">
           </div>
           <div class="form-group">
           	<h6>Texto de apoio: </h6>
-          	<textarea rows="5" cols="62" class="form-control">Digite o texto de apoio</textarea>
+          	<textarea rows="5" cols="62" class="form-control" placeholder="Digite o texto de apoio" name="texto"></textarea>
           </div>
           <div class="form-group">
           	<h6>Data Limite: </h6>
-            <input  type="date" class="form-control" placeholder="dd/mm/yyyy">
+            <input name="data" type="date" class="form-control" placeholder="dd/mm/yyyy">
           </div>
           <button type="submit" class="btn btn-primary" > Criar </button>
         </form>
@@ -149,41 +149,28 @@
 <div class="container" style="margin: 150px">
   <div class="row">
     <div class="col-9">
+    <%for (i in redacoes){%>
+    <%for (j in redacoes_corrigidas){%>
+    <%if(redacoes[i]._id.toString() != redacoes_corrigidas[j].redacao_original.toString()){%>
       <div class="card mb-2">
-        <h5 class="card-header text-center">Tema da Redação</h5>
+        <h5 class="card-header text-center"><% for (t in temas){%>
+          <%if(temas[t]._id.toString() == redacoes[i].tema.toString()){ %>
+            <%=temas[t].nome  %>
+            <%}%>
+        <%}%></h5>
         <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <h6 class="text-center">Nome do aluno: </h6>
+          <h5 class="card-title"><%= redacoes[i].titulo%></h5>
+          <h6 class="text-center"><% for (a in alunos){%>
+          <%if(alunos[a]._id.toString() == redacoes[i].autor.toString()){ %>
+            <%=alunos[a].nome  %>
+            <%}%>
+        <%}%></h6>
          <a href="#" data-toggle="modal" data-target="#redacaoModal" class="btn btn-primary">Ver Redação</a>
         </div>
       </div>
+      <% }}}%>
 
-      <div class="card mb-3">
-        <h5 class="card-header text-center">Tema da Redação</h5>
-        <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <h6 class="text-center">Nome do aluno: </h6>
-          <a href="#" class="btn btn-primary">Ver Redação</a>
-        </div>
-      </div>
-
-      <div class="card mb-3">
-        <h5 class="card-header text-center">Tema da Redação</h5>
-        <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <h6 class="text-center">Nome do aluno: </h6>
-          <a href="#" class="btn btn-primary">Ver Redação</a>
-        </div>
-      </div>
-
-      <div class="card mb-3">
-        <h5 class="card-header text-center">Tema da Redação</h5>
-        <div class="card-body text-center">
-          <h5 class="card-title">Titulo da Redação</h5>
-          <h6 class="text-center">Nome do aluno: </h6>	
-          <a href="#" class="btn btn-primary">Ver Redação</a>
-        </div>
-      </div>
+      
     </div>
 
     <div class="col-3 border border-warning">
@@ -191,15 +178,11 @@
       <div class="alert alert-success" role="alert">
       <a href="#" class="alert-link" data-toggle="modal" data-target="#tema">Aqui um tema em aberto</a>
       </div>
+       <%for (t in temas){%>
       <div class="alert alert-success" role="alert">
-        <a href="#" class="alert-link">Aqui um tema em aberto</a>
+        <a href="#" class="alert-link"><%= temas[t].nome %></a>
        </div>
-       <div class="alert alert-light" role="alert">
-        <a href="#" class="alert-link">Aqui um tema já fechado</a>
-       </div>
-       <div class="alert alert-light" role="alert">
-        <a href="#" class="alert-link">Aqui um Tema</a>
-       </div>
+       <%}%>
     </div>
   </div>
 </div>

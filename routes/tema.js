@@ -24,6 +24,7 @@ Router.post('/', (req, res) =>{
         texto_apoio
     })
     novo_tema.save();
+    res.redirect("/paginadoprofessor159");
 })
 
 module.exports = Router;

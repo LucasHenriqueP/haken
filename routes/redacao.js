@@ -84,7 +84,8 @@ router.post('/', upload.single('redacao'), (req, res) =>{
     })
     console.log(novaRedacao);
     novaRedacao.save()
-    res.status(200).send("Redação Enviada com Sucesso")
+    res.redirect('/');
+    //res.status(200).send("Redação Enviada com Sucesso")
     
 })
 

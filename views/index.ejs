@@ -37,7 +37,7 @@
 
     <div class="navbar-header">
 
-      <a href="index.html" class="" style="">
+      <a href="/" class="" style="">
       <img src="img/logo.png" class="img-responsive" style="width: 170px; left: 80px;">
         </a>
     </div>
@@ -202,12 +202,59 @@
   </div>
 </div>
 
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+        <% for(j in redacoes) {%>
+        <%for(c in redacoes_corrigidas){%>
+        <%if(redacoes[j]._id.toString() == redacoes_corrigidas[c].redacao_original.toString()){%>
+      <div class="card mb-2">
+        <h5 class="card-header text-center"><% for (t in temas){%>
+          <%if(temas[t]._id.toString() == redacoes[j].tema.toString()){ %>
+            <%=temas[t].nome  %>
+            <%}%>
+        <%}%>
+
+
+
+        </h5>
+        <div class="card-body text-center">
+          <h5 class="card-title"><%= redacoes[j].titulo%></h5>
+          <a href="#<%= j.toString() %>" data-toggle="modal" class="btn btn-primary">Ver Redação</a>
+        </div>
+      </div>
+        <%}%>
+        <%}%>
+      <%}%>
+    </div>
+
+    <div class="col-3 border border-warning">
+      <h3 class="text-center card-header"> Temas </h3>
+      <div class="alert alert-success" role="alert">
+       <a href="#" class="alert-link" data-toggle="modal" data-target="#tema">Aqui um tema em aberto</a>
+      </div>
+      <%for (t in temas){%>
+      <div class="alert alert-success" role="alert">
+        <a href="#" class="alert-link"><%= temas[j].nome %></a>
+       </div>
+       <%}%>
+    </div>
+  </div>
+</div>
+
+
 <% for (i in redacoes){%>
-<div class="modal fade" id="<%= redacoes[i]._id %>" tabindex="-1" role="dialog" aria-labelledby="<%= redacoes[i]._id %>Label" aria-hidden="true">
+<div class="modal fade" id="<%= i.toString() %>" tabindex="-1" role="dialog" aria-labelledby="<%- redacoes[i]._id.toString() %>Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="<%= redacoes[i]._id %>Label"><%= redacoes[i].titulo%></h5>
+        <h5 class="modal-title" id="<%- redacoes[i]._id.toString() %>Label"><%= redacoes[i].titulo%></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -223,44 +270,6 @@
   </div>
 </div>
 <%}%>
-
-
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-9">
-        <% for(j in redacoes) {%>
-      <div class="card mb-2">
-        <h5 class="card-header text-center"><%= redacoes[j].tema%></h5>
-        <div class="card-body text-center">
-          <h5 class="card-title"><%= redacoes[j].titulo%></h5>
-          <a href="#<%= redacoes[j]._id %>" data-toggle="modal" data-target="#" class="btn btn-primary">Ver Redação</a>
-        </div>
-      </div>
-      <%}%>
-    </div>
-
-    <div class="col-3 border border-warning">
-      <h3 class="text-center card-header"> Temas </h3>
-      <div class="alert alert-success" role="alert">
-       <a href="#" class="alert-link" data-toggle="modal" data-target="#tema">Aqui um tema em aberto</a>
-      </div>
-      <div class="alert alert-success" role="alert">
-        <a href="#" class="alert-link">Aqui um tema em aberto</a>
-       </div>
-       <div class="alert alert-light" role="alert">
-        <a href="#" class="alert-link">Aqui um tema já fechado</a>
-       </div>
-       <div class="alert alert-light" role="alert">
-        <a href="#" class="alert-link">Aqui um tema já fechado</a>
-        
-       </div>
-    </div>
-  </div>
-</div>
-
 
 </body>
 </html>

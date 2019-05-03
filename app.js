@@ -9,6 +9,7 @@ const tema = require('./routes/tema');
 const temaModel = require('./models/tema');
 const redacaoCorrigidaModel = require('./models/redacao_corrigida');
 const redacaoModel = require('./models/redacao');
+const alunoModel = require("./models/aluno");
 
 
 let port = 3000;
@@ -46,14 +47,17 @@ app.get('/', (req, res) =>{
     })
     numeros = 5
 });
-app.get('/professor', (req, res) =>{
+app.get('/paginadoprofessor159', (req, res) =>{
     temaModel.find({}, (er, temas) =>{
         redacaoModel.find({}, (er, redacoes) =>{
             redacaoCorrigidaModel.find({}, (er, redacoes_corrigidas)=>{
-                 console.log(redacoes);
-                 console.log(temas);
-                 console.log(redacoes_corrigidas);
-                 res.render('professor.ejs', {temas, redacoes, redacoes_corrigidas})
+                alunoModel.find({}, (err, alunos)=>{
+                    //console.log(alunos);
+                    //console.log(redacoes);
+                    //console.log(temas);
+                    //console.log(redacoes_corrigidas);
+                    res.render('professor.ejs', {temas, redacoes, redacoes_corrigidas, alunos})
+                })
              })
         })
      })
@@ -63,6 +67,9 @@ app.get('/professor', (req, res) =>{
 app.use('/redacao', redacao);
 app.use('/login', login);
 app.use('/tema', tema);
+app.get("*",(req, res)=>{
+    res.redirect('/');
+})
 
 app.listen(port, ()=>{
     console.log(`Servidor iniciado na porta: ${port}`);

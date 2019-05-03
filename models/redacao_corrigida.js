@@ -11,14 +11,11 @@ const Redacao_Corrigida_Schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tema:{
-        type: String // id
-    },
     arquivo:{
         type: String
     },
     redacao_original:{
-        type: String, //mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         //required: true
     }
 });
@@ -29,12 +26,14 @@ const Redacao_corrigida = mongoose.model('redacao_corrigida', Redacao_Corrigida_
 const testered_corrigida = new Redacao_corrigida({
     titulo: "Os tres mosqueteiros",
     tema: "Livros classicos",
-    arquivo: "redacao.pdf"
+    arquivo: "redacao.pdf",
+    redacao_original: "5ccc20b048f2ec094c084b2b"
 
 })
 
 //Não coloquei o autor porque acho que não é preciso na redação corrigida
 //testered_corrigida.save()
-console.log(testered_corrigida);
+//console.log(testered_corrigida);
+//testered_corrigida.save()
 
 module.exports = Redacao_corrigida
