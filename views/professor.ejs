@@ -93,7 +93,8 @@
 </div>
 
 <%for (i in redacoes){%>
-<div class="modal fade" id="<%= redacoes[i]._id%>" tabindex="-1" role="dialog" aria-labelledby="<%= redacoes[i]._id%>Label" aria-hidden="true">
+  <%let id = redacoes[i]._id.toString(); id = 'j'+id;%>
+<div class="modal fade" id="<%= id%>" tabindex="-1" role="dialog" aria-labelledby="<%= redacoes[i]._id%>Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -104,16 +105,21 @@
       </div>
       <div class="modal-body">
         <h3 class="text-center"><%redacoes[i].temas%></h3>
-        <h6>Nome:</h6>
-        <h6>Email:</h6>
-        <a href=""> <p> <i class="far fa-file">&nbsp;</i> Redação </p></a>
-
+        <% for(a in alunos){%>
+        <% if(alunos[a]._id.toString() == redacoes[i].autor.toString()){%>
+        <h6>Nome: <%= alunos[a].nome%></h6>
+        <h6>Email: <%= alunos[a].email%></h6>
+        <%}}%>
+        <a href="http://localhost:3000/redacao/<%= redacoes[i].arquivo%>"> <p> <i class="far fa-file">&nbsp;</i> Redação </p></a>
+        <form action="http://localhost:3000/redacao/prof" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <h6>Selecionar Redação Corrigada: </h6>
         <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
-        <input type="file" />  
+        <input type="hidden" name="arquivo_or" value="<%= redacoes[i]._id%>" />
+        <input type="file" name="arquivo"/>  
           </div>
            <button type="submit" class="btn btn-primary" > Enviar </button>
+           </form>
       </div>
       <div class="modal-footer">
       </div>
@@ -121,19 +127,21 @@
   </div>
 </div>
 <%}%>
-<div class="modal fade" id="tema" tabindex="-1" role="dialog" aria-labelledby="temaModalLabel" aria-hidden="true">
+<%for(i in temas){%>
+  <%let id = temas[i]._id.toString(); id = 'j'+id;%>
+<div class="modal fade" id="<%= id%>" tabindex="-1" role="dialog" aria-labelledby="<%= temas[i]._id%>Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="redacaoModalLabel">Tema</h5>
+        <h5 class="modal-title" id="<%= temas[i]._id%>Label"><%=temas[i].nome%></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3 class="text-center">Texto de apoio:</h3>
+        <h3 class="text-center"><%=temas[i].texto_apoio%></h3>
 
-        <h6>Data Limite de envio:</h6>
+        <h6><%=temas[i].data_limite%></h6>
 
 
            <button type="submit" class="btn btn-primary" ><a href="#" data-toggle="modal" data-target="#envioredacao" style="color: black;"> Editar </a></button>
@@ -143,6 +151,7 @@
     </div>
   </div>
 </div>
+<%}%>
 
 
 
@@ -150,8 +159,13 @@
   <div class="row">
     <div class="col-9">
     <%for (i in redacoes){%>
+    <% redacoes[i]._id[0] = 'j' %>
+    <%let control = 1; let id = redacoes[i]._id.toString(); id = 'j'+id;%>
     <%for (j in redacoes_corrigidas){%>
-    <%if(redacoes[i]._id.toString() != redacoes_corrigidas[j].redacao_original.toString()){%>
+    <%console.log("jtckfkik") %>
+    
+    <%if((redacoes[i]._id.toString() != redacoes_corrigidas[j].redacao_original.toString()) && control){%>
+    <% control =0; %>
       <div class="card mb-2">
         <h5 class="card-header text-center"><% for (t in temas){%>
           <%if(temas[t]._id.toString() == redacoes[i].tema.toString()){ %>
@@ -165,7 +179,7 @@
             <%=alunos[a].nome  %>
             <%}%>
         <%}%></h6>
-         <a href="#" data-toggle="modal" data-target="#redacaoModal" class="btn btn-primary">Ver Redação</a>
+         <a href="#" data-toggle="modal" data-target="#<%= id%>" class="btn btn-primary">Ver Redação</a>
         </div>
       </div>
       <% }}}%>
@@ -179,8 +193,9 @@
       <a href="#" class="alert-link" data-toggle="modal" data-target="#tema">Aqui um tema em aberto</a>
       </div>
        <%for (t in temas){%>
+       <%let id = temas[t]._id.toString(); id = 'j'+id;%>
       <div class="alert alert-success" role="alert">
-        <a href="#" class="alert-link"><%= temas[t].nome %></a>
+        <a href="#" data-toggle="modal" data-target="#<%= id%>" class="alert-link"><%= temas[t].nome %></a>
        </div>
        <%}%>
     </div>

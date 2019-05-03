@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const redacao = require('../models/redacao');
+const redacaoCori = require('../models/redacao_corrigida');
 const aluno = require('../models/aluno');
 const path = require('path');
 
@@ -61,6 +62,8 @@ router.get('/:nome', (req, res)=>{
     console.log(nome);
 })
 
+
+
 router.post('/', upload.single('redacao'), (req, res) =>{
     console.log(req.file.originalname);
     const {nome, email, titulo, tema} = req.body
@@ -84,6 +87,23 @@ router.post('/', upload.single('redacao'), (req, res) =>{
     })
     console.log(novaRedacao);
     novaRedacao.save()
+    res.redirect('/');
+    //res.status(200).send("Redação Enviada com Sucesso")
+    
+})
+
+router.post('/prof/', upload.single('arquivo'), (req, res) =>{
+    console.log(req.file.originalname);
+    const {redacao_or} = req.body
+    //console.log(titulo, nome, email, tema);
+    //let data =  new Date().toLocaleDateString('pt-br');
+
+    const redCor = new redacaoCori({
+        arquivo: req.file.originalname,
+        redacao_original: redacao_or
+    })
+
+    redCor.save()
     res.redirect('/');
     //res.status(200).send("Redação Enviada com Sucesso")
     

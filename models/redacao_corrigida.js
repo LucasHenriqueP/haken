@@ -8,8 +8,7 @@ bd.on('error',() =>console.log("erro ao conectar"));
 
 const Redacao_Corrigida_Schema = new mongoose.Schema({
     titulo:{
-        type: String,
-        required: true
+        type: String
     },
     arquivo:{
         type: String
@@ -25,14 +24,14 @@ const Redacao_corrigida = mongoose.model('redacao_corrigida', Redacao_Corrigida_
 
 const testered_corrigida = new Redacao_corrigida({
     titulo: "Os tres mosqueteiros",
-    tema: "Livros classicos",
     arquivo: "redacao.pdf",
-    redacao_original: "5ccc20b048f2ec094c084b2b"
+    redacao_original: "5ccc82b2f0ec561e410882ab"
 
 })
 
+
 //Não coloquei o autor porque acho que não é preciso na redação corrigida
-//testered_corrigida.save()
+testered_corrigida.save()
 //console.log(testered_corrigida);
 //testered_corrigida.save()
 
