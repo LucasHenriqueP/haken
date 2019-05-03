@@ -92,17 +92,18 @@
   </div>
 </div>
 
-<div class="modal fade" id="redacaoModal" tabindex="-1" role="dialog" aria-labelledby="redacaoModalLabel" aria-hidden="true">
+<%for (i in redacoes)%>
+<div class="modal fade" id="<%= redacoes[i]._id%>" tabindex="-1" role="dialog" aria-labelledby="<%= redacoes[i]._id%>Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="redacaoModalLabel">Titulo Da redacao</h5>
+        <h5 class="modal-title" id="<%= redacoes[i]._id%>Label"><%redacoes[i].titulo%></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3 class="text-center">Tema</h3>
+        <h3 class="text-center"><%redacoes[i].temas%></h3>
         <h6>Nome:</h6>
         <h6>Email:</h6>
         <a href=""> <p> <i class="far fa-file">&nbsp;</i> Redação </p></a>
@@ -119,7 +120,7 @@
     </div>
   </div>
 </div>
-
+<%}%>
 <div class="modal fade" id="tema" tabindex="-1" role="dialog" aria-labelledby="temaModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

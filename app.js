@@ -34,7 +34,7 @@ app.get('/', (req, res) =>{
     temaModel.find({}, (er, temas) =>{
        redacaoModel.find({}, (er, redacoes) =>{
            redacaoCorrigidaModel.find({}, (er, redacoes_corrigidas)=>{
-            console.log(redacoes);
+                console.log(redacoes);
                 console.log(temas);
                 console.log(redacoes_corrigidas);
                 res.render('index.ejs', {temas, redacoes, redacoes_corrigidas})
@@ -47,8 +47,16 @@ app.get('/', (req, res) =>{
     numeros = 5
 });
 app.get('/professor', (req, res) =>{
-    numeros = 5
-    res.render('professor.ejs', {numeros})
+    temaModel.find({}, (er, temas) =>{
+        redacaoModel.find({}, (er, redacoes) =>{
+            redacaoCorrigidaModel.find({}, (er, redacoes_corrigidas)=>{
+                 console.log(redacoes);
+                 console.log(temas);
+                 console.log(redacoes_corrigidas);
+                 res.render('professor.ejs', {temas, redacoes, redacoes_corrigidas})
+             })
+        })
+     })
 });
 
 
